@@ -2,11 +2,12 @@
 from pyweb import pydom
 import datetime
 import time
+import asyncio
 
 while True:
     now = datetime.datetime.now()
     pydom["div#time"].html = str(now)
-    time.sleep(1)
+    await asyncio.sleep(1)
 
 
 # (
