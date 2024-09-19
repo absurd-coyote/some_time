@@ -1,6 +1,7 @@
-import ltk
+# import ltk
+from pyweb import pydom
 
-print("hello")
+pydom["div#time"].html = f"paf"
 
 # (
 #     ltk.VBox(
