@@ -1,7 +1,13 @@
 # import ltk
 from pyweb import pydom
+import datetime
+import time
 
-pydom["div#time"].html = f"paf"
+while True:
+    now = datetime.datetime.now()
+    pydom["div#time"].html = str(now)
+    time.sleep(1)
+
 
 # (
 #     ltk.VBox(
