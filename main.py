@@ -9,7 +9,7 @@ def update_time():
     now = datetime.datetime.now()
     pydom["div#time"].html = str(now)
 
-set_interval(uodate_time, 10)
+set_interval(update_time, 10)
 
 
 
