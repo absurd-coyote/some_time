@@ -13,10 +13,12 @@ def start(event):
     global counter_running
     start = datetime.datetime.now()
     counter_running = True
+    pydom["div#debug1"].html = "call start"
     
 
 def update_time():
     global counter_running
+    pydom["div#debug2"].html = str(counter_running)
     if counter_running:
         now = datetime.datetime.now()
         pydom["div#time"].html = str(now - start)
