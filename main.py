@@ -5,7 +5,7 @@ import time
 import asyncio
 from pyodide.ffi.wrappers import set_interval
 
-counter = 0
+counter = datetime.timedelta()
 counter_running = False
 start = 0
 
