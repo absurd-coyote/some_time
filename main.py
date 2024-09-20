@@ -20,9 +20,11 @@ def update_time():
     global counter_running
     pydom["div#debug2"].html = str(counter_running)
     if counter_running:
+        pydom["div#debug3"].html = "up"
         now = datetime.datetime.now()
         pydom["div#time"].html = str(now - start)
     else:
+        pydom["div#debug3"].html = "reset"
         pydom["div#time"].html = str(counter)
 
 
