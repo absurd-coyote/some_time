@@ -3,22 +3,15 @@ from pyweb import pydom
 import datetime
 import time
 import asyncio
+from pyodide.ffi.wrappers import set_interval
 
-# while True:
-#     now = datetime.datetime.now()
-#     pydom["div#time"].html = str(now)
-#     await asyncio.sleep(1)
+def update_time():
+    now = datetime.datetime.now()
+    pydom["div#time"].html = str(now)
 
-from datetime import datetime
-import asyncio
+set_interval(uodate_time, 10)
 
-async def clock_forever():
-    while(True):
-        now = datetime.now()
-        Element('clock-output').write(f"{now.hour}:{now.minute:02}:{now.second:02}")
-        await asyncio.sleep(1)
 
-PyScript.loop.create_task(clock_forever())
 
 # (
 #     ltk.VBox(
