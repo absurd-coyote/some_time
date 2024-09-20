@@ -10,13 +10,13 @@ counter_running = False
 start = 0
 
 def start(event):
-    global countee_running
+    global counter_running
     start = datetime.datetime.now()
     counter_running = True
     
 
 def update_time():
-    global countee_running
+    global counter_running
     if counter_running:
         now = datetime.datetime.now()
         pydom["div#time"].html = str(now - start)
