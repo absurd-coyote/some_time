@@ -9,7 +9,7 @@ counter = 0
 counter_running = False
 start = 0
 
-def start():
+def start(event):
     start = datetime.datetime.now()
     counter_running = True
     
