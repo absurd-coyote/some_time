@@ -7,35 +7,35 @@ from pyodide.ffi.wrappers import set_interval
 
 counter = datetime.timedelta()
 counter_running = False
-start = 0
+start_count = 0
 
 
 def start(event):
     global counter_running
-    global start
+    global start_count
 
-    start = datetime.datetime.now()
+    start_count = datetime.datetime.now()
     counter_running = True
     
 
 def stop(event):
     global counter_running
-    global start
+    global start_count
     global counter
 
     counter_running = False
     now = datetime.datetime.now()
-    counter += now - start
+    counter += now - start_count
 
 
 def update_time():
     global counter_running
-    global start
+    global start_count
     global counter
 
     if counter_running:
         now = datetime.datetime.now()
-        pydom["div#time"].html = str(now - start)
+        pydom["div#time"].html = str(now - start_count)
     else:
         pydom["div#time"].html = str(counter)
 
