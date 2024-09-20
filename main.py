@@ -28,6 +28,11 @@ def stop(event):
     counter += now - start_count
 
 
+def reset(event):
+    global counter
+    counter = datetime.timedelta()
+
+
 def update_time():
     global counter_running
     global start_count
