@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>LTK on MicroPython</title>
+    <title>Work timer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
   
     <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+
+    <!-- for splashscreen -->
+    <style>
+        #loading { outline: none; border: none; background: transparent }
+    </style>
+    <script type="module">
+        const loading = document.getElementById('loading');
+        addEventListener('py:ready', () => loading.close());
+        loading.showModal();
+    </script>
+
     
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <body>
+    <dialog id="loading">
+        <h1>Loading...</h1>
+    </dialog>
+
     <p>
-        This is a minimal template for 
-        using <a target=_blank href="https://github.com/laffra/ltk">LTK</a>,
-        the PyScript Little Toolkit.
-    </p>
-    <p>
-        This example runs on PyOdide. We install the 
-        <code>pyscript-ltk</code> project directly from PyPI.
-        See <code>pyscript.toml</code> for more information.
-    </p>
-    <p>
-        More LTK examples can be found in the 
-        <a target=_blank href=https://laffra.github.io/ltk/>LTK kitchensink</a>.
+        How long did I work ?
     </p>
 
     <div id="time"></div>
