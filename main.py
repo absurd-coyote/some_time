@@ -5,26 +5,11 @@ import time
 import asyncio
 from pyodide.ffi.wrappers import set_interval
 
+start = datetime.datetime.now()
+
 def update_time():
     now = datetime.datetime.now()
-    pydom["div#time"].html = str(now)
+    pydom["div#time"].html = str(now - start)
 
 set_interval(update_time, 10)
 
-
-
-# (
-#     ltk.VBox(
-#         ltk.HBox(
-#             ltk.Text("Hello"),
-#             ltk.Button(
-#                 "World", 
-#                 lambda event: 
-#                     ltk.find(".ltk-button, a")
-#                         .css("color", "red")
-#             )
-#             .css("color", "blue")
-#         )
-#     )
-#     .appendTo(ltk.window.document.body)
-# )
