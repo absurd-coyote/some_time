@@ -35,7 +35,7 @@ def update_time():
 
     if counter_running:
         now = datetime.datetime.now()
-        pydom["div#time"].html = str(counter + now - start)
+        pydom["div#time"].html = str(now - start)
     else:
         pydom["div#time"].html = str(counter)
 
