@@ -9,24 +9,34 @@ counter = 0
 counter_running = False
 start = 0
 
+
 def start(event):
     global counter_running
     global start
+
     start = datetime.datetime.now()
     counter_running = True
-    pydom["div#debug1"].html = "call start"
     
+
+def stop(event):
+    global counter_running
+    global start
+    global counter
+
+    counter_running = False
+    now = datetime.datetime.now()
+    counter += now - start
+
 
 def update_time():
     global counter_running
     global start
-    pydom["div#debug2"].html = str(counter_running)
+    global counter
+
     if counter_running:
-        pydom["div#debug3"].html = "up"
         now = datetime.datetime.now()
-        pydom["div#time"].html = str(now - start)
+        pydom["div#time"].html = str(counter + now - start)
     else:
-        pydom["div#debug3"].html = "reset"
         pydom["div#time"].html = str(counter)
 
 
