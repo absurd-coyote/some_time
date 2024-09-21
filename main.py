@@ -35,6 +35,8 @@ def reset(event):
 
 def add_time(event):
     print(event)
+    breakpoint()
+    pass
 
 
 def update_time():
