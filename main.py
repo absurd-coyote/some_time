@@ -37,6 +37,10 @@ def add_time(event):
     global counter
     if event.target.id == "add-15":
         time_to_add = 15
+    if event.target.id == "add-30":
+        time_to_add = 30
+    if event.target.id == "add-60":
+        time_to_add = 60
     counter += datetime.timedelta(seconds=time_to_add*60)
 
 
