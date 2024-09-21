@@ -33,6 +33,10 @@ def reset(event):
     counter = datetime.timedelta()
 
 
+def add_time(event):
+    print(event)
+
+
 def update_time():
     global counter_running
     global start_count
