@@ -34,15 +34,11 @@ def reset(event):
 
 
 def add_time(event):
-    print(event)
-    print(type(event))
-    print(dir(event))
-    print(event.toString())
-    print(event.to_py())
-    print(event.target)
-    print(dir(event.target))
-    print(event.target.id)
-    print(event.target.js_id)
+    global counter
+    if event.target.id == "add-15":
+        time_to_add = 15
+    counter += datetime.timedelta(seconds=time_to_add*60)
+
 
 
 def update_time():
