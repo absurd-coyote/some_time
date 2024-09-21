@@ -35,8 +35,7 @@ def reset(event):
 
 def add_time(event):
     print(event)
-    import code
-    code.interact()
+    breakpoint()
     pass
 
 
