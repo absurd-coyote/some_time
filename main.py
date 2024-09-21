@@ -4,6 +4,7 @@ import datetime
 import time
 import asyncio
 from pyodide.ffi.wrappers import set_interval
+from pyscript import storage
 
 counter = datetime.timedelta()
 counter_running = False
@@ -49,6 +50,8 @@ def update_time():
     global counter_running
     global start_count
     global counter
+    
+    store = await storage("time")
 
     if counter_running:
         now = datetime.datetime.now()
