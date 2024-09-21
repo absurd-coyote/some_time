@@ -41,6 +41,8 @@ def add_time(event):
     print(event.to_py())
     print(event.target)
     print(dir(event.target))
+    print(event.target.id)
+    print(event.target.js_id)
 
 
 def update_time():
