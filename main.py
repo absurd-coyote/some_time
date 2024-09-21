@@ -37,6 +37,9 @@ def add_time(event):
     print(event)
     print(type(event))
     print(dir(event))
+    print(event.toString())
+    print(event.to_py())
+    print(event.target)
 
 
 def update_time():
