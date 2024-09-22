@@ -6,6 +6,7 @@ import json
 import sys
 from pyodide.ffi.wrappers import set_interval
 from pyscript import window
+from pyscript import js
 
 ls = window.localStorage
 
@@ -15,13 +16,13 @@ start_count = 0
 
 print("init")
 
-if data := ls.getItem("data"):
-    print("loaded")
-    print(data)
-    status = json.loads(data)
-    counter = status.counter
-    counter_running = status.counter_running
-    start_count = status.start_count
+# if data := ls.getItem("data"):
+#     print("loaded")
+#     print(data)
+#     status = json.loads(data)
+#     counter = status.counter
+#     counter_running = status.counter_running
+#     start_count = status.start_count
 
 
 def start(event):
@@ -62,8 +63,6 @@ def update_time():
     global start_count
     global counter
 
-    print("loop")
-
     now = datetime.datetime.now()
     if counter_running:
         counter += now - start_count
@@ -75,12 +74,11 @@ def update_time():
             "counter": counter,
             "start_count": start_count
             }
-    ls.setItem("data", json.dumps(status))
+    js.localStorage.setItem("data", json.dumps(status))
 
-    if data := ls.getItem("data"):
+    if data := js.localStorage.getItem("data"):
         print("check")
         print(data)
-    sys.exit()
 
 
 
