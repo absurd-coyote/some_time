@@ -10,7 +10,7 @@ from pyscript import js
 from pyscript import storage
 
 ls = window.localStorage
-store = await storage("my-storage-name")
+store = storage("my-storage-name")
 
 counter = datetime.timedelta()
 counter_running = False
