@@ -28,23 +28,26 @@
     <p>
         How long did I work ?
     </p>
-    <div>
-	<button id="start" py-click="start">Start</button>
-	<button id="stop" py-click="stop">Stop</button>
-	<button id="reset" py-click="reset">Reset</button>
-    </div>
+    
+    <section class="pyscript">
+	<main>
+            <div>
+                <button id="start" py-click="start">Start</button>
+                <button id="stop" py-click="stop">Stop</button>
+                <button id="reset" py-click="reset">Reset</button>
+            </div>
 
-    <div id="time"></div>
+            <div id="time"></div>
 
-    <div>
-	<button id="add-15" py-click="add_time">+ 15m</button>
-	<button id="add-30" py-click="add_time">+ 30m</button>
-	<button id="add-60" py-click="add_time">+ 1h</button>
-    </div>
+            <div>
+                <button id="add-15" py-click="add_time">+ 15m</button>
+                <button id="add-30" py-click="add_time">+ 30m</button>
+                <button id="add-60" py-click="add_time">+ 1h</button>
+            </div>
+	</main>
 
-
-    <script type="py" src="main.py" config="pyscript.toml" terminal>
-    </script>
+	<script type="py" src="main.py" config="pyscript.toml" terminal></script>
+    </section>
   
 </body>
 </html>
