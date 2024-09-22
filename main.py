@@ -1,4 +1,3 @@
-from pyweb import pydom
 import datetime
 import time
 import asyncio
@@ -7,9 +6,11 @@ import sys
 from pyodide.ffi.wrappers import set_interval
 from pyscript import window
 from pyscript import storage
+from pyscript import display
 
 ls = window.localStorage
-store = storage("my-storage-name")
+# try again await here
+store = await storage("my-storage-name")
 
 counter = datetime.timedelta()
 counter_running = False
@@ -69,7 +70,7 @@ def update_time():
         counter += now - start_count
 
     start_count = now
-    pydom["div#time"].html = str(counter)
+    display(str(counter), target ="time")
 
     status = {
             "counter": counter,
