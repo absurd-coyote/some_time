@@ -1,9 +1,9 @@
-# import ltk
 from pyweb import pydom
 import datetime
 import time
 import asyncio
 import json
+import sys
 from pyodide.ffi.wrappers import set_interval
 from pyscript import window
 
@@ -74,6 +74,11 @@ def update_time():
             "start_count": start_count
             }
     ls.setItem("data", json.dumps(status))
+
+    if data := ls.getItem("data"):
+        print("check")
+        print(data)
+    sys.exit()
 
 
 
