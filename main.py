@@ -62,6 +62,8 @@ def update_time():
     global start_count
     global counter
 
+    print("loop")
+
     now = datetime.datetime.now()
     if counter_running:
         counter += now - start_count
