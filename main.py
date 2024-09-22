@@ -16,6 +16,7 @@ counter_running = False
 start_count = 0
 
 print("init")
+print(store["data"])
 
 # if data := ls.getItem("data"):
 #     print("loaded")
@@ -64,8 +65,6 @@ def update_time():
     global start_count
     global counter
 
-    print("loop")
-
     now = datetime.datetime.now()
     if counter_running:
         counter += now - start_count
@@ -78,10 +77,6 @@ def update_time():
             "start_count": start_count
             }
     store["data"] = json.dumps(status)
-
-    if data := store.getItem("data"):
-        print("check")
-        print(data)
 
 
 
