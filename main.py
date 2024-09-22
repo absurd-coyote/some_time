@@ -7,8 +7,10 @@ import sys
 from pyodide.ffi.wrappers import set_interval
 from pyscript import window
 from pyscript import js
+from pyscript import storage
 
 ls = window.localStorage
+store = await storage("my-storage-name")
 
 counter = datetime.timedelta()
 counter_running = False
@@ -74,9 +76,9 @@ def update_time():
             "counter": counter,
             "start_count": start_count
             }
-    js.localStorage.setItem("data", json.dumps(status))
+    store.setItem("data", json.dumps(status))
 
-    if data := js.localStorage.getItem("data"):
+    if data := store.getItem("data"):
         print("check")
         print(data)
 
