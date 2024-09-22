@@ -6,7 +6,6 @@ import json
 import sys
 from pyodide.ffi.wrappers import set_interval
 from pyscript import window
-from pyscript import js
 from pyscript import storage
 
 ls = window.localStorage
