@@ -13,7 +13,11 @@ counter = datetime.timedelta()
 counter_running = False
 start_count = 0
 
+print("init")
+
 if data := ls.getItem("data"):
+    print("loaded")
+    print(data)
     status = json.loads(data)
     counter = status.counter
     counter_running = status.counter_running
