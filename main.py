@@ -3,6 +3,7 @@ from pyweb import pydom
 import datetime
 import time
 import asyncio
+import json
 from pyodide.ffi.wrappers import set_interval
 from pyscript import window
 
@@ -11,6 +12,12 @@ ls = window.localStorage
 counter = datetime.timedelta()
 counter_running = False
 start_count = 0
+
+if data := ls.getItem("data"):
+    status = json.loads(data)
+    counter = status.counter
+    counter_running = status.counter_running
+    start_count = status.start_count
 
 
 def start(event):
@@ -27,8 +34,6 @@ def stop(event):
     global counter
 
     counter_running = False
-    now = datetime.datetime.now()
-    counter += now - start_count
 
 
 def reset(event):
@@ -53,13 +58,18 @@ def update_time():
     global start_count
     global counter
 
+    now = datetime.datetime.now()
     if counter_running:
-        now = datetime.datetime.now()
-        pydom["div#time"].html = str(counter + now - start_count)
-    else:
-        pydom["div#time"].html = str(counter)
+        counter += now - start_count
 
-    ls.setItem("data", '{"time": counter}')
+    start_count = now
+    pydom["div#time"].html = str(counter)
+
+    status = {
+            "counter": counter,
+            "start_count": start_count
+            }
+    ls.setItem("data", json.dumps(status))
 
 
 
