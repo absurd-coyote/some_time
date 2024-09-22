@@ -64,6 +64,8 @@ def update_time():
     global start_count
     global counter
 
+    print("loop")
+
     now = datetime.datetime.now()
     if counter_running:
         counter += now - start_count
@@ -75,7 +77,7 @@ def update_time():
             "counter": counter,
             "start_count": start_count
             }
-    store.setItem("data", json.dumps(status))
+    store["data"] = json.dumps(status))
 
     if data := store.getItem("data"):
         print("check")
