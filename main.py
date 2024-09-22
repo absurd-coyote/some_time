@@ -77,7 +77,7 @@ def update_time():
             "counter": counter,
             "start_count": start_count
             }
-    store["data"] = json.dumps(status))
+    store["data"] = json.dumps(status)
 
     if data := store.getItem("data"):
         print("check")
