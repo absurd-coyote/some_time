@@ -9,7 +9,6 @@ from pyscript import storage
 from pyscript import display
 
 ls = window.localStorage
-# try again await here
 store = await storage("my-storage-name")
 
 counter = datetime.timedelta()
@@ -70,7 +69,7 @@ def update_time():
         counter += now - start_count
 
     start_count = now
-    display(str(counter), target ="time")
+    display(str(counter), target ="time", append=False)
 
     status = {
             "counter": counter,
