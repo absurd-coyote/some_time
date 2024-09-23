@@ -78,7 +78,7 @@ def update_time():
             "start_count": start_count
             }
     store["data"] = json.dumps(status)
-    store.sync()
+    await store.sync()
     if "data" in sync:
         print(store["data"])
 
