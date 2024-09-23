@@ -17,7 +17,7 @@ start_count = 0
 
 print("init")
 if "data" in sync:
-    print(store["data"]
+    print(store["data"])
 
 # if data := ls.getItem("data"):
 #     print("loaded")
