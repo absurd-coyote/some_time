@@ -61,7 +61,7 @@ def add_time(event):
 
 
 
-def update_time():
+async def update_time():
     global counter_running
     global start_count
     global counter
