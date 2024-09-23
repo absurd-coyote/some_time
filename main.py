@@ -16,7 +16,8 @@ counter_running = False
 start_count = 0
 
 print("init")
-print(store["data"])
+if "data" in sync:
+    print(store["data"]
 
 # if data := ls.getItem("data"):
 #     print("loaded")
@@ -77,6 +78,9 @@ def update_time():
             "start_count": start_count
             }
     store["data"] = json.dumps(status)
+    store.sync()
+    if "data" in sync:
+        print(store["data"]
 
 
 
