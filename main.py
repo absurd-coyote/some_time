@@ -66,6 +66,8 @@ async def update_time():
     global start_count
     global counter
 
+    print("loop")
+
     now = datetime.datetime.now()
     if counter_running:
         counter += now - start_count
@@ -78,6 +80,7 @@ async def update_time():
             "start_count": start_count
             }
     store["data"] = json.dumps(status)
+    print("sync")
     await store.sync()
     if "data" in store:
         print(store["data"])
