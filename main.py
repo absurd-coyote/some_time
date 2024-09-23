@@ -66,8 +66,6 @@ async def update_time():
     global start_count
     global counter
 
-    print("loop")
-
     now = datetime.datetime.now()
     if counter_running:
         counter += now - start_count
@@ -75,19 +73,12 @@ async def update_time():
     start_count = now
     display(str(counter), target ="time", append=False)
 
-    print("build status")
     status = {
             "counter": counter.total_seconds(),
             "start_count": start_count.isoformat()
             }
-    print("dumpy")
     dumpy = json.dumps(status)
-    print("write")
     store["data"] =  dumpy
-    print("sync")
-    await store.sync()
-    if "data" in store:
-        print(store["data"])
 
 
 
