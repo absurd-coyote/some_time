@@ -69,6 +69,7 @@ async def update_time():
 
     status = {
             "counter": counter.total_seconds(),
+            "counter_running": counter_running,
             "start_count": start_count.isoformat()
             }
     dumpy = json.dumps(status)
