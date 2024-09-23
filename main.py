@@ -75,10 +75,12 @@ async def update_time():
     start_count = now
     display(str(counter), target ="time", append=False)
 
+    print("build status")
     status = {
             "counter": counter,
             "start_count": start_count
             }
+    print("write")
     store["data"] = json.dumps(status)
     print("sync")
     await store.sync()
