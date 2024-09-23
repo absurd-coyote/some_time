@@ -80,7 +80,7 @@ def update_time():
     store["data"] = json.dumps(status)
     store.sync()
     if "data" in sync:
-        print(store["data"]
+        print(store["data"])
 
 
 
