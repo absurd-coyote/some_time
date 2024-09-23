@@ -80,8 +80,10 @@ async def update_time():
             "counter": counter,
             "start_count": start_count
             }
+    print("dumpy")
+    dumpy = json.dumps(status)
     print("write")
-    store["data"] = json.dumps(status)
+    store["data"] =  dumpy
     print("sync")
     await store.sync()
     if "data" in store:
