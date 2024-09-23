@@ -15,7 +15,6 @@ counter_running = False
 start_count = 0
 
 if "data" in store:
-    print(store["data"])
     status = json.loads(store["data"])
     counter = datetime.timedelta(seconds=status["counter"])
     counter_running = status["counter_running"]
@@ -78,4 +77,3 @@ async def update_time():
 
 
 set_interval(update_time, 10)
-
