@@ -8,24 +8,18 @@ from pyscript import window
 from pyscript import storage
 from pyscript import display
 
-ls = window.localStorage
-store = await storage("my-storage-name")
+store = await storage("some-time")
 
 counter = datetime.timedelta()
 counter_running = False
 start_count = 0
 
-print("init")
 if "data" in store:
     print(store["data"])
-
-# if data := ls.getItem("data"):
-#     print("loaded")
-#     print(data)
-#     status = json.loads(data)
-#     counter = status.counter
-#     counter_running = status.counter_running
-#     start_count = status.start_count
+    status = json.loads(store["data"])
+    counter = datetime.timedelta(seconds=status["counter"])
+    counter_running = status["counter_running"]
+    start_count = datetime.datetime.fromisoformat(status["start_count"])
 
 
 def start(event):
