@@ -77,8 +77,8 @@ async def update_time():
 
     print("build status")
     status = {
-            "counter": counter,
-            "start_count": start_count
+            "counter": counter.total_seconds(),
+            "start_count": start_count.isoformat()
             }
     print("dumpy")
     dumpy = json.dumps(status)
