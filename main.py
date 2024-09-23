@@ -61,7 +61,7 @@ def add_time(event):
 
 
 
-def update_time():
+async def update_time():
     global counter_running
     global start_count
     global counter
@@ -78,7 +78,8 @@ def update_time():
             "start_count": start_count
             }
     store["data"] = json.dumps(status)
-    if "data" in sync:
+    await store.sync()
+    if "data" in store:
         print(store["data"])
 
 
