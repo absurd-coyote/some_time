@@ -1,13 +1,24 @@
-# import ltk
-from pyweb import pydom
 import datetime
 import time
 import asyncio
+import json
+import sys
 from pyodide.ffi.wrappers import set_interval
+from pyscript import window
+from pyscript import storage
+from pyscript import display
+
+store = await storage("some-time")
 
 counter = datetime.timedelta()
 counter_running = False
 start_count = 0
+
+if "data" in store:
+    status = json.loads(store["data"])
+    counter = datetime.timedelta(seconds=status["counter"])
+    counter_running = status["counter_running"]
+    start_count = datetime.datetime.fromisoformat(status["start_count"])
 
 
 def start(event):
@@ -24,8 +35,6 @@ def stop(event):
     global counter
 
     counter_running = False
-    now = datetime.datetime.now()
-    counter += now - start_count
 
 
 def reset(event):
@@ -45,17 +54,26 @@ def add_time(event):
 
 
 
-def update_time():
+async def update_time():
     global counter_running
     global start_count
     global counter
 
+    now = datetime.datetime.now()
     if counter_running:
-        now = datetime.datetime.now()
-        pydom["div#time"].html = str(counter + now - start_count)
-    else:
-        pydom["div#time"].html = str(counter)
+        counter += now - start_count
+
+    start_count = now
+    display(str(counter), target ="time", append=False)
+
+    status = {
+            "counter": counter.total_seconds(),
+            "counter_running": counter_running,
+            "start_count": start_count.isoformat()
+            }
+    dumpy = json.dumps(status)
+    store["data"] =  dumpy
+
 
 
 set_interval(update_time, 10)
-
