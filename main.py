@@ -55,7 +55,6 @@ def add_time(event):
 
 def remove_time(event):
     global counter
-    # time_to_remove = 10
     if event.target.id == "remove-15":
         time_to_remove = 15
     if event.target.id == "remove-30":
