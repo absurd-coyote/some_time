@@ -58,10 +58,10 @@ def remove_time(event):
     time_to_remove = 10
     if event.target.id == "remove-15":
         time_to_remove = 15
-#     if event.target.id == "remove-30":
-#         time_to_remove = 30
-#     if event.target.id == "remove-60":
-#         time_to_remove = 60
+    if event.target.id == "remove-30":
+        time_to_remove = 30
+    if event.target.id == "remove-60":
+        time_to_remove = 60
     counter -= datetime.timedelta(seconds=time_to_remove*60)
 
 
