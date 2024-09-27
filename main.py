@@ -53,6 +53,16 @@ def add_time(event):
     counter += datetime.timedelta(seconds=time_to_add*60)
 
 
+def remove_time(event):
+    global counter
+    if event.target.id == "remove-15":
+        time_to_remove = 15
+    if event.target.id == "remove-30":
+        time_to_remove = 30
+    if event.target.id == "remove-60":
+        time_to_remove = 60
+    counter -= datetime.timedelta(seconds=time_to_remove*60)
+
 
 async def update_time():
     global counter_running
