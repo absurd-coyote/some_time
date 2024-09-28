@@ -8,7 +8,12 @@ from pyscript import window
 from pyscript import storage
 from pyscript import display
 
-from domain.time_counter import TimeCounter
+import os
+
+print(sys.argv[0])
+print(os.path.dirname(os.path.realpath(__file__)))
+print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
+
 
 time_counter = TimeCounter()
 
