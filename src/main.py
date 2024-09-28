@@ -10,6 +10,11 @@ from pyscript import display
 
 import os
 
+print("init")
+print(os.path.dirname(os.path.realpath(__file__)))
+print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
+print("done")
+
 
 store = await storage("some-time")
 
@@ -87,8 +92,6 @@ async def update_time():
     dumpy = json.dumps(status)
     store["data"] =  dumpy
 
-    print(os.path.dirname(os.path.realpath(__file__)))
-    print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
 
 
 set_interval(update_time, 10)
