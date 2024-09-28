@@ -11,8 +11,7 @@ from pyscript import display
 import os
 
 print("init")
-print(os.path.dirname(os.path.realpath(__file__)))
-print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
+print(os.listdir("."))
 print("done")
 
 
