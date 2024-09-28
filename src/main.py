@@ -16,7 +16,12 @@ print(os.listdir("."))
 print(os.listdir("domain"))
 print(os.listdir("pyscript"))
 
-import domain
+with open('domain/__init__.py', 'r') as f:
+    print(f.read())
+with open('pyscript/__init__.py', 'r') as f:
+    print(f.read())
+with open('domain/time_counter.py', 'r') as f:
+    print(f.read())
 
 store = await storage("some-time")
 
