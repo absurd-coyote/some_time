@@ -1,4 +1,4 @@
-packages = ["pyscript-ltk"]
 [files]
-"https://raw.githubusercontent.com/pyscript/ltk/main/ltk/ltk.js" = "ltk/ltk.js"
-"https://raw.githubusercontent.com/pyscript/ltk/main/ltk/ltk.css" = "ltk/ltk.css"
+"domain/__init.py__" = ""
+"domain/time_counter.py" = ""
+
