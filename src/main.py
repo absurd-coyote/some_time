@@ -8,9 +8,11 @@ from pyscript import window
 from pyscript import storage
 from pyscript import display
 
-from domain.time_counter import TimeCounter
+# from domain.time_counter import TimeCounter
+# time_counter = TimeCounter()
 
-time_counter = TimeCounter()
+import os
+print(os.listdir("."))
 
 store = await storage("some-time")
 
