@@ -1,4 +1,4 @@
 [files]
-"./domain/__init.py__" = "./domain/__init__.py"
+"./domain/__init__.py" = "./domain/__init__.py"
 "./domain/time_counter.py" = "./domain/time_counter.py"
 
