@@ -16,6 +16,8 @@ print(os.listdir("."))
 print(os.listdir("domain"))
 print(os.listdir("pyscript"))
 
+import domain
+
 store = await storage("some-time")
 
 counter = datetime.timedelta()
