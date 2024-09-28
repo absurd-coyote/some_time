@@ -13,6 +13,8 @@ from pyscript import display
 
 import os
 print(os.listdir("."))
+print(os.listdir("domain"))
+print(os.listdir("pyscript"))
 
 store = await storage("some-time")
 
