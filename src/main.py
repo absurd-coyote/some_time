@@ -8,6 +8,10 @@ from pyscript import window
 from pyscript import storage
 from pyscript import display
 
+from domain.time_counter import TimeCounter
+
+time_counter = TimeCounter()
+
 store = await storage("some-time")
 
 counter = datetime.timedelta()
