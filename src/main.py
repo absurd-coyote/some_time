@@ -8,12 +8,9 @@ from pyscript import window
 from pyscript import storage
 from pyscript import display
 
-import os
+from domain.time_counter import TimeCounter
 
-print("init")
-print(os.listdir("."))
-print("done")
-
+time_counter = TimeCounter()
 
 store = await storage("some-time")
 
