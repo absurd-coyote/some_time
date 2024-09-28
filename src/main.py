@@ -14,9 +14,6 @@ print(sys.argv[0])
 # print(os.path.dirname(os.path.realpath(__file__)))
 # print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
 
-
-time_counter = TimeCounter()
-
 store = await storage("some-time")
 
 counter = datetime.timedelta()
