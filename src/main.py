@@ -87,9 +87,8 @@ async def update_time():
     dumpy = json.dumps(status)
     store["data"] =  dumpy
 
-    print(sys.argv[0])
-    # print(os.path.dirname(os.path.realpath(__file__)))
-    # print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
+    print(os.path.dirname(os.path.realpath(__file__)))
+    print(os.listdir(os.path.dirname(os.path.realpath(__file__))))
 
 
 set_interval(update_time, 10)
