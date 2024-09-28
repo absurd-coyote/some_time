@@ -8,20 +8,20 @@ from pyscript import window
 from pyscript import storage
 from pyscript import display
 
-# from domain.time_counter import TimeCounter
-# time_counter = TimeCounter()
+from domain.time_counter import TimeCounter
+time_counter = TimeCounter()
 
-import os
-print(os.listdir("."))
-print(os.listdir("domain"))
-print(os.listdir("pyscript"))
-
-with open('domain/__init__.py', 'r') as f:
-    print(f.read())
-with open('pyscript/__init__.py', 'r') as f:
-    print(f.read())
-with open('domain/time_counter.py', 'r') as f:
-    print(f.read())
+# import os
+# print(os.listdir("."))
+# print(os.listdir("domain"))
+# print(os.listdir("pyscript"))
+# 
+# with open('domain/__init__.py', 'r') as f:
+#     print(f.read())
+# with open('pyscript/__init__.py', 'r') as f:
+#     print(f.read())
+# with open('domain/time_counter.py', 'r') as f:
+#     print(f.read())
 
 store = await storage("some-time")
 
