@@ -2,3 +2,16 @@
 "./domain/__init__.py" = "./domain/__init__.py"
 "./domain/time_counter.py" = "./domain/time_counter.py"
 
+"./inputs/__init__.py" = "./inputs/__init__.py"
+"./inputs/cookie_memory_adapter.py" = "./inputs/cookie_memory_adapter.py"
+"./inputs/input_memory_port.py" = "./inputs/input_memory_port.py"
+"./inputs/trigger_port.py" = "./inputs/trigger_port.py"
+"./inputs/web_trigger_adapter.py" = "./inputs/web_trigger_adapter.py"
+
+
+"./outputs/__init__.py" = "./outputs/__init__.py"
+"./outputs/cookie_memory_adapter.py" = "./outputs/cookie_memory_adapter.py"
+"./outputs/output_display_port.py" = "./outputs/output_display_port.py"
+"./outputs/output_memory_port.py" = "./outputs/output_memory_port.py"
+"./outputs/web_display_adapter.py" = "./outputs/web_display_adapter.py"
+
