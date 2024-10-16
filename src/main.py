@@ -26,4 +26,13 @@ def add_time(event):
 def remove_time(event):
     web_trigger.remove_time(event)
 
+def start(event):
+    web_trigger.start()
+
+def stop(event):
+    web_trigger.stop()
+
+def reset(event):
+    web_trigger.reset()
+
 set_interval(time_counter.update_time, 10)

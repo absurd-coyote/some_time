@@ -1,3 +1,4 @@
+from inputs.trigger_port import TriggerPort
 
 class WebTriggerAdapter(TriggerPort):
     def __init__(self):
