@@ -22,8 +22,8 @@ class WebTriggerAdapter(TriggerPort):
             time_to_remove = 60
         self._remove_time(time_to_remove)
 
-    def _add_time(time_to_add):
+    def _add_time(self, time_to_add):
         self.time_counter.add_time(time_to_add)
 
-    def _remove_time(time_to_remove):
+    def _remove_time(self, time_to_remove):
         self.time_counter.remove_time(time_to_remove)
