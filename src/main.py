@@ -1,4 +1,5 @@
 from pyodide.ffi.wrappers import set_interval
+from pyscript import storage
 
 from domain.time_counter import TimeCounter
 from inputs.cookie_memory_adapter import CookieMemoryAdapter as InputCookie
