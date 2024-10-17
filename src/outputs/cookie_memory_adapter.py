@@ -1,7 +1,7 @@
 import json
 from abc import ABC, abstractmethod
 
-from inputs.output_memory_port import OutputMemoryPort
+from outputs.output_memory_port import OutputMemoryPort
 
 class CookieMemoryAdapter(OutputMemoryPort):
     def __init__(self, store):
