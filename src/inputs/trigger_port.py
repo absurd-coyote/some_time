@@ -18,15 +18,15 @@ class TriggerPort(ABC):
         self.time_counter.reset()
 
     @abstractmethod
-    def add_time(self):
+    def add_time(self, time_to_add):
         pass
 
     @abstractmethod
-    def remove_time(self):
+    def remove_time(self, time_to_remove):
         pass
 
-    def _add_time(time_to_add):
+    def _add_time(self, time_to_add):
         self.time_counter.add_time(time_to_add)
 
-    def _remove_time(time_to_remove):
+    def _remove_time(self, time_to_remove):
         self.time_counter.remove_time(time_to_remove)
