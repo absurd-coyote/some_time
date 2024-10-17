@@ -2,7 +2,7 @@ from inputs.trigger_port import TriggerPort
 
 class WebTriggerAdapter(TriggerPort):
     def __init__(self):
-        super(__init__)
+        super().__init__()
 
     def add_time(self, event):
         if event.target.id == "add-15":
