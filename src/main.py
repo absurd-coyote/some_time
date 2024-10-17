@@ -16,6 +16,7 @@ web_display = WebDisplayAdapter()
 
 time_counter = TimeCounter(web_trigger, input_cookie, web_display, output_cookie)
 
+time_counter.init()
 input_cookie.init_time_counter(time_counter)
 web_trigger.init_time_counter(time_counter)
 output_cookie.init_time_counter(time_counter)
