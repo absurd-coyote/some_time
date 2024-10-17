@@ -6,7 +6,7 @@ class TimeCounter:
         self.input_trigger = input_trigger
         self.input_memory = input_memory
         self.output_display = output_display
-        self.output_memory = outout_memory
+        self.output_memory = output_memory
     
     def init(self):
         if self.input_memory.available():
