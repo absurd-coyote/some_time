@@ -11,6 +11,7 @@ class TimeCounter:
     def init(self):
         if self.input_memory.available():
             self.counter, self.counter_running, self.start_count = self.input_memory.load_values()
+            print("load_value")
         else:
             self.counter = datetime.timedelta()
             self.counter_running = False
