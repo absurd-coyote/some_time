@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "some-time"
+version = "0.1.0"
+description = "a simple time tracker"
+authors = ["Absurd Coyote <absurd_coyote@proton.me>"]
+readme = "README.md"
+license = "GPL-3.0-or-later"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
