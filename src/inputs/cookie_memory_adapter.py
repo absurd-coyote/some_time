@@ -10,7 +10,7 @@ class CookieMemoryAdapter(InputMemoryPort):
     def available(self):
         return "data" in self.store
 
-    def load_values(self, text):
+    def load_values(self):
         status = json.loads(self.store["data"])
         counter = datetime.timedelta(seconds=status["counter"])
         counter_running = status["counter_running"]
