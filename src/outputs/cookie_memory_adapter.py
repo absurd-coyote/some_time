@@ -9,4 +9,6 @@ class CookieMemoryAdapter(OutputMemoryPort):
         self.store = store
 
     def save(self, status):
+        print("save")
         self.store["data"] = json.dumps(status)
+        print("save done")
