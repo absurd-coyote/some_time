@@ -44,8 +44,8 @@ class TimeCounter:
 
         self.output_display.display(self.counter)
         self.output_memory.save({
-            "counter": counter.total_seconds(),
-            "counter_running": counter_running,
-            "start_count": start_count.isoformat()
+            "counter": self.counter.total_seconds(),
+            "counter_running": self.counter_running,
+            "start_count": self.start_count.isoformat()
         })
             
