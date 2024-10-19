@@ -4,11 +4,8 @@ from inputs.input_memory_port import InputMemoryPort
     
 class CookieMemoryAdapter(InputMemoryPort):
     def __init__(self, store):
-        self.time_counter = None
+        super().__init__()
         self.store = store
-
-    def init_time_counter(self, time_counter):
-        self.time_counter = time_counter
 
     def available(self):
         return "data" in self.store
