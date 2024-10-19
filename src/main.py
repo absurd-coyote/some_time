@@ -1,89 +1,40 @@
-import datetime
-import time
-import asyncio
-import json
-import sys
 from pyodide.ffi.wrappers import set_interval
-from pyscript import window
 from pyscript import storage
-from pyscript import display
+
+from domain.time_counter import TimeCounter
+from inputs.cookie_memory_adapter import CookieMemoryAdapter as InputCookie
+from inputs.web_trigger_adapter import WebTriggerAdapter
+from outputs.cookie_memory_adapter import CookieMemoryAdapter as OutputCookie
+from outputs.web_display_adapter import WebDisplayAdapter
 
 store = await storage("some-time")
 
-counter = datetime.timedelta()
-counter_running = False
-start_count = 0
+input_cookie = InputCookie(store)
+web_trigger = WebTriggerAdapter()
+output_cookie = OutputCookie(store)
+web_display = WebDisplayAdapter()
 
-if "data" in store:
-    status = json.loads(store["data"])
-    counter = datetime.timedelta(seconds=status["counter"])
-    counter_running = status["counter_running"]
-    start_count = datetime.datetime.fromisoformat(status["start_count"])
+time_counter = TimeCounter(web_trigger, input_cookie, web_display, output_cookie)
 
-
-def start(event):
-    global counter_running
-    global start_count
-
-    start_count = datetime.datetime.now()
-    counter_running = True
-    
-
-def stop(event):
-    global counter_running
-    global start_count
-    global counter
-
-    counter_running = False
-
-
-def reset(event):
-    global counter
-    counter = datetime.timedelta()
-
+time_counter.init()
+input_cookie.init_time_counter(time_counter)
+web_trigger.init_time_counter(time_counter)
+output_cookie.init_time_counter(time_counter)
+web_display.init_time_counter(time_counter)
 
 def add_time(event):
-    global counter
-    if event.target.id == "add-15":
-        time_to_add = 15
-    if event.target.id == "add-30":
-        time_to_add = 30
-    if event.target.id == "add-60":
-        time_to_add = 60
-    counter += datetime.timedelta(seconds=time_to_add*60)
-
+    web_trigger.add_time(event)
 
 def remove_time(event):
-    global counter
-    if event.target.id == "remove-15":
-        time_to_remove = 15
-    if event.target.id == "remove-30":
-        time_to_remove = 30
-    if event.target.id == "remove-60":
-        time_to_remove = 60
-    counter -= datetime.timedelta(seconds=time_to_remove*60)
+    web_trigger.remove_time(event)
 
+def start(event):
+    web_trigger.start()
 
-async def update_time():
-    global counter_running
-    global start_count
-    global counter
+def stop(event):
+    web_trigger.stop()
 
-    now = datetime.datetime.now()
-    if counter_running:
-        counter += now - start_count
+def reset(event):
+    web_trigger.reset()
 
-    start_count = now
-    display(str(counter), target ="time", append=False)
-
-    status = {
-            "counter": counter.total_seconds(),
-            "counter_running": counter_running,
-            "start_count": start_count.isoformat()
-            }
-    dumpy = json.dumps(status)
-    store["data"] =  dumpy
-
-
-
-set_interval(update_time, 10)
+set_interval(time_counter.update_time, 10)
