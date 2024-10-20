@@ -1,3 +1,5 @@
+import datetime
+import json
 from pyscript import storage
 
 from inputs.input_memory_port import InputMemoryPort
@@ -10,7 +12,7 @@ class CookieMemoryAdapter(InputMemoryPort):
     def available(self):
         return "data" in self.store
 
-    def load_values(self, text):
+    def load_values(self):
         status = json.loads(self.store["data"])
         counter = datetime.timedelta(seconds=status["counter"])
         counter_running = status["counter_running"]
