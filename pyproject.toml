@@ -8,8 +8,16 @@ license = "GPL-3.0-or-later"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pytest = "^8.3.3"
 
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.29.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks.test]
+cmd = "pytest tests"
+help   = "Run the test suits"
