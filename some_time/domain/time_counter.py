@@ -10,7 +10,10 @@ class TimeCounter:
     
     def init(self):
         if self.input_memory.available():
-            self.counter, self.counter_running, self.start_count = self.input_memory.load_values()
+            memory_data = self.input_memory.load_values()
+            self.counter = datetime.timedelta(seconds=memory_data["counter"])
+            self.counter_running = memory_data["counter_running"]
+            self.start_count = datetime.datetime.fromisoformat(memory_data["start_count"])
         else:
             self.counter = datetime.timedelta()
             self.counter_running = False
