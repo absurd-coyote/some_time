@@ -1,5 +1,11 @@
 import pytest
-from unittest.mock import Mock
+import sys
+
+from unittest.mock import Mock, MagicMock
+
+@pytest.fixture
+def store():
+    return MagicMock()
 
 @pytest.fixture
 def time_counter():
@@ -20,3 +26,12 @@ def output_display():
 @pytest.fixture
 def output_memory():
     return Mock()
+
+
+def display(*args, **kwargs):
+    breakpoint()
+    pass
+
+module = type(sys)('pyscript')
+module.display = Mock()  # display
+sys.modules['pyscript'] = module

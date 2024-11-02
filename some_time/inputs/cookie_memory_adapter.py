@@ -1,8 +1,7 @@
 import datetime
 import json
-from pyscript import storage
 
-from inputs.input_memory_port import InputMemoryPort
+from some_time.inputs.input_memory_port import InputMemoryPort
     
 class CookieMemoryAdapter(InputMemoryPort):
     def __init__(self, store):
