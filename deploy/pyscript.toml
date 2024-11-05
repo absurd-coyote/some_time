@@ -1,0 +1,17 @@
+[files]
+"./some_time/domain/__init__.py" = "./some_time/domain/__init__.py"
+"./some_time/domain/time_counter.py" = "./some_time/domain/time_counter.py"
+
+"./some_time/inputs/__init__.py" = "./some_time/inputs/__init__.py"
+"./some_time/inputs/cookie_memory_adapter.py" = "./some_time/inputs/cookie_memory_adapter.py"
+"./some_time/inputs/input_memory_port.py" = "./some_time/inputs/input_memory_port.py"
+"./some_time/inputs/trigger_port.py" = "./some_time/inputs/trigger_port.py"
+"./some_time/inputs/web_trigger_adapter.py" = "./some_time/inputs/web_trigger_adapter.py"
+
+
+"./some_time/outputs/__init__.py" = "./some_time/outputs/__init__.py"
+"./some_time/outputs/cookie_memory_adapter.py" = "./some_time/outputs/cookie_memory_adapter.py"
+"./some_time/outputs/output_display_port.py" = "./some_time/outputs/output_display_port.py"
+"./some_time/outputs/output_memory_port.py" = "./some_time/outputs/output_memory_port.py"
+"./some_time/outputs/web_display_adapter.py" = "./some_time/outputs/web_display_adapter.py"
+

@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from pyscript import display
 
-from outputs.output_display_port import OutDisplayPort
+from some_time.outputs.output_display_port import OutDisplayPort
 
 class WebDisplayAdapter(OutDisplayPort):
     def __init__(self):
