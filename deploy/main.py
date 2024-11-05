@@ -1,11 +1,11 @@
 from pyodide.ffi.wrappers import set_interval
 from pyscript import storage
 
-from domain.time_counter import TimeCounter
-from inputs.cookie_memory_adapter import CookieMemoryAdapter as InputCookie
-from inputs.web_trigger_adapter import WebTriggerAdapter
-from outputs.cookie_memory_adapter import CookieMemoryAdapter as OutputCookie
-from outputs.web_display_adapter import WebDisplayAdapter
+from some_time.domain.time_counter import TimeCounter
+from some_time.inputs.cookie_memory_adapter import CookieMemoryAdapter as InputCookie
+from some_time.inputs.web_trigger_adapter import WebTriggerAdapter
+from some_time.outputs.cookie_memory_adapter import CookieMemoryAdapter as OutputCookie
+from some_time.outputs.web_display_adapter import WebDisplayAdapter
 
 store = await storage("some-time")
 
